@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Online Job Tracker - Application Detector",
+  "version": "1.0.0",
+  "description": "Detects supported job-site application confirmation pages and records them in your Job Tracker.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "http://localhost:8080/*",
+    "http://127.0.0.1:8080/*"
+  ],
+  "action": {
+    "default_title": "Job Tracker Detector",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.linkedin.com/jobs/*",
+        "*://*.indeed.com/*",
+        "*://*.greenhouse.io/*",
+        "*://*.lever.co/*",
+        "*://*.myworkdayjobs.com/*",
+        "*://*.workdayjobs.com/*",
+        "*://*.smartrecruiters.com/*",
+        "*://*.icims.com/*",
+        "*://*.taleo.net/*",
+        "*://*.ashbyhq.com/*",
+        "*://*.jobvite.com/*",
+        "*://*.successfactors.com/*",
+        "*://*.recruitee.com/*",
+        "*://*.bamboohr.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Job Tracker Detector</title><style>
+body{font:14px Arial,sans-serif;width:330px;padding:14px;color:#222}label{display:block;margin:12px 0 5px;font-weight:600}input{box-sizing:border-box;width:100%;padding:8px;border:1px solid #bbb;border-radius:5px}button{margin-top:12px;padding:9px 12px;border:0;border-radius:5px;background:#175cd3;color:white;cursor:pointer}small{color:#555;line-height:1.45;display:block;margin-top:8px}#status{margin-top:10px;white-space:normal}</style></head>
+<body><h3>Job Tracker Detector</h3>
+<label for="apiBaseUrl">Backend API base URL</label><input id="apiBaseUrl" value="http://localhost:8080/api">
+<label for="jwtToken">Job Tracker JWT token</label><input id="jwtToken" type="password" placeholder="Paste token from Job Tracker login">
+<label><input id="enabled" type="checkbox" style="width:auto"> Enable automatic detection</label>
+<button id="save">Save settings</button><div id="status" role="status"></div>
+<small>Only supported job-site confirmation pages are detected. The extension sends a detected company, title and page URL to your authenticated local tracker. Check the saved details for accuracy. Your token is stored in this browser extension's local storage; do not share it.</small>
+<script src="popup.js"></script></body></html>
